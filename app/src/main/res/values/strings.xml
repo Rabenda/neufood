@@ -6,4 +6,6 @@
     <string name="login_password">Password</string>
     <string name="login_login">login</string>
     <string name="login_register">register</string>
+    <string name="hint_username">请输入账号 :</string>
+    <string name="hint_password">请输入密码 :</string>
 </resources>
