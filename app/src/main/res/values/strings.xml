@@ -8,4 +8,11 @@
     <string name="login_register">register</string>
     <string name="hint_username">请输入账号 :</string>
     <string name="hint_password">请输入密码 :</string>
+    <string name="hint_mobilenum">请输入手机号 :</string>
+    <string name="hint_address">请输入地址 :</string>
+    <string name="hint_comment">请输入注释 :</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
