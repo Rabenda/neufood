@@ -4,9 +4,9 @@ import io.github.rabenda.neufood.bean.LoginBean
 import io.github.rabenda.neufood.iface.LoginIFace
 import io.github.rabenda.neufood.listener.TListener
 
-class LoginModel: RetrofitBaseModel(), LoginIFace<LoginBean> {
+class LoginModel: LoginIFace<LoginBean> {
     override fun getLoginResult(username: String, password: String, tListener: TListener<LoginBean>) {
-        val call = service.userLogin(username, password)
-        callEnqueue(call, tListener)
+        val call = RetrofitBaseModel.service.userLogin(username, password)
+        RetrofitBaseModel.callEnqueue(call, tListener)
     }
 }
