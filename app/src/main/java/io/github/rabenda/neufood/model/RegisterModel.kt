@@ -6,7 +6,7 @@ import io.github.rabenda.neufood.listener.TListener
 import io.github.rabenda.neufood.model.RetrofitBaseModel.Companion.callEnqueue
 import io.github.rabenda.neufood.model.RetrofitBaseModel.Companion.service
 
-class RegisterModel: RegisterIFace<RegisterBean> {
+class RegisterModel: RegisterIFace {
     override fun getRegisterResult(username: String, password: String, mobilenum: String, address: String, comment: String, tListener: TListener<RegisterBean>) {
         val call = service.userRegister(username, password, mobilenum, address, comment)
         callEnqueue(call, tListener)

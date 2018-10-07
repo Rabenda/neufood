@@ -2,6 +2,7 @@ package io.github.rabenda.neufood.model
 
 import android.util.Log
 import android.widget.Toast
+import io.github.rabenda.neufood.listener.ListListener
 import io.github.rabenda.neufood.server.Server
 import io.github.rabenda.neufood.service.Service
 import retrofit2.Call
@@ -33,5 +34,22 @@ class RetrofitBaseModel {
             })
 
         }
+
+        fun <T> callEnqueueList(call: Call<List<T>>, listListener: ListListener<T>) {
+            call.enqueue(object : Callback<List<T>> {
+                override fun onResponse(call: Call<List<T>>, response: Response<List<T>>) {
+                    if (response.isSuccessful && response.body() != null) {
+                        listListener.onResponse(response.body()!!)
+                    } else {
+                        listListener.onFail("error")
+                    }
+                }
+
+                override fun onFailure(call: Call<List<T>>, t: Throwable) {
+
+                }
+            })
+        }
+
     }
 }
