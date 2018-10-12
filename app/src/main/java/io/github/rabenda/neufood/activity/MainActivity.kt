@@ -18,10 +18,13 @@ class MainActivity : AppCompatActivity() {
             R.id.neufood_store -> {
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.neufood_favorite -> {
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
+            R.id.neufood_search -> {
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.neufood_mine -> {
                 return@OnNavigationItemSelectedListener true
             }
         }

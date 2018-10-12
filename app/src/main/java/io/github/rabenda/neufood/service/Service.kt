@@ -19,7 +19,7 @@ interface Service {
                      @Query("comment") comment: String): Call<RegisterBean>
 
     @GET("getAllShops.do")
-    fun getShopList(): Call<StoreBean>
+    fun getShopList(): Call<List<StoreBean>>
 
 
 
