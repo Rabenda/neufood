@@ -11,7 +11,7 @@ import io.github.rabenda.neufood.bean.StoreBean
 interface Service {
 
     @GET("userLogin.do")
-    fun userLogin(@Query("username") username: String, @Query("userpass") userpass: String ): Call<LoginBean>
+    fun userLogin(@Query("username") username: String, @Query("userpass") userpass: String): Call<LoginBean>
 
     @GET("userRegister.do")
     fun userRegister(@Query("username") username: String, @Query("userpass") password: String,
@@ -20,7 +20,6 @@ interface Service {
 
     @GET("getAllShops.do")
     fun getShopList(): Call<List<StoreBean>>
-
 
 
 }
