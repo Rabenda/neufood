@@ -21,5 +21,4 @@ interface Service {
     @GET("getAllShops.do")
     fun getShopList(): Call<List<StoreBean>>
 
-
 }

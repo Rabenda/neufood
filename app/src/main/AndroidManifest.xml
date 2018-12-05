@@ -28,7 +28,8 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/neufood"></activity>
+            android:label="@string/neufood" />
+        <activity android:name=".activity.StoreActivity"></activity>
     </application>
 
 </manifest>

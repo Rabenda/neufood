@@ -8,5 +8,5 @@ data class StoreBean(
         var intro: String,
         var pic: String,
         var comment: String,
-        var level: String
+        var level: Float
 )
