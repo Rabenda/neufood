@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NeuFood</string>
+
+    <!-- Strings related to login -->
+    <string name="login_account">Account</string>
+    <string name="login_password">Password</string>
+    <string name="login_login">login</string>
+    <string name="login_register">register</string>
+    <string name="hint_username">请输入账号 :</string>
+    <string name="hint_password">请输入密码 :</string>
+    <string name="hint_mobilenum">请输入手机号 :</string>
+    <string name="hint_address">请输入地址 :</string>
+    <string name="hint_comment">请输入注释 :</string>
+    <string name="neufood_store">店铺</string>
+    <string name="neufood_search">搜索</string>
+    <string name="neufood_favorite">收藏</string>
+    <string name="neufood_mine">我的</string>
+    <string name="neufood">东软美食APP</string>
+
+</resources>
