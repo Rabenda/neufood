@@ -1,8 +1,8 @@
 package io.github.rabenda.neufood.activity
 
-import android.support.v4.app.Fragment
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
@@ -51,15 +51,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-    private val viewPagerAdapter = object : FragmentPagerAdapter(supportFragmentManager){
+    private val viewPagerAdapter = object : FragmentPagerAdapter(supportFragmentManager) {
         override fun getCount(): Int = fragmentList.size
         override fun getItem(p0: Int): Fragment = fragmentList[p0]
     }
 
     private val viewPagerListener = object : ViewPager.OnPageChangeListener {
         override fun onPageSelected(index: Int) {
-            when(index) {
+            when (index) {
                 0 -> bottom_navigation.selectedItemId = R.id.neufood_store
                 1 -> bottom_navigation.selectedItemId = R.id.neufood_search
                 2 -> bottom_navigation.selectedItemId = R.id.neufood_favorite

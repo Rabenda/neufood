@@ -7,19 +7,14 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import io.github.rabenda.neufood.R
+import io.github.rabenda.neufood.adapters.StoreAdapter
+import io.github.rabenda.neufood.server.Server
+import kotlinx.android.synthetic.main.fragment_store.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-import io.github.rabenda.neufood.R
-import io.github.rabenda.neufood.adapters.StoreAdapter
-import io.github.rabenda.neufood.model.retrofitModel
-import kotlinx.android.synthetic.main.fragment_store.*
-import io.github.rabenda.neufood.server.Server
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class StoreFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +25,7 @@ class StoreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        storeRecyclerView.layoutManager = GridLayoutManager(context,1)
+        storeRecyclerView.layoutManager = GridLayoutManager(context, 1)
         showAllShops()
     }
 

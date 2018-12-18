@@ -19,7 +19,7 @@ class StoreActivity : AppCompatActivity() {
     private val storeName get() = intent.getStringExtra("shopname")
     private val share get() = getSharedPreferences("NeuFood", Activity.MODE_PRIVATE)
     private val userId get() = share.getString("user_id", "")
-    private var menu:Menu? = null
+    private var menu: Menu? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +38,9 @@ class StoreActivity : AppCompatActivity() {
 
 
     private fun updateCollect() = doAsync {
-        val result = Server.isCollected(userId,storeId,"0")
+        val result = Server.isCollected(userId, storeId, "0")
         uiThread {
-            if(result.collected == "1")
+            if (result.collected == "1")
                 menu!!.findItem(R.id.isCollected).setIcon(R.drawable.ic_collected)
             else
                 menu!!.findItem(R.id.isCollected).setIcon(R.drawable.ic_notcollected)
@@ -57,7 +57,7 @@ class StoreActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.isCollected)
             doAsync {
-                val result = Server.collectShop(userId,storeId)
+                val result = Server.collectShop(userId, storeId)
                 uiThread {
                     if (result.success == "1")
                         updateCollect()

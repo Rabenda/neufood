@@ -19,10 +19,6 @@ import kotlinx.android.synthetic.main.fragment_mine.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-/**
- * A simple [Fragment] subclass.
- *
- */
 class MineFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

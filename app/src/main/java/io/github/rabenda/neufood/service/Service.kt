@@ -1,12 +1,11 @@
 package io.github.rabenda.neufood.service
 
+import io.github.rabenda.neufood.bean.LoginBean
+import io.github.rabenda.neufood.bean.RegisterBean
+import io.github.rabenda.neufood.bean.StoreBean
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-
-import  io.github.rabenda.neufood.bean.RegisterBean
-import  io.github.rabenda.neufood.bean.LoginBean
-import io.github.rabenda.neufood.bean.StoreBean
 
 interface Service {
 

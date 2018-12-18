@@ -13,7 +13,7 @@ import org.jetbrains.anko.uiThread
 
 // flag == false ----> add comment
 class CommentAlert(context: Context, item_id: String, content: String = "", flag: Boolean = false) :
-    AlertDialog.Builder(context) {
+        AlertDialog.Builder(context) {
 
     init {
         if (flag) setTitle("修改评论") else setTitle("添加评论")
@@ -25,7 +25,7 @@ class CommentAlert(context: Context, item_id: String, content: String = "", flag
             if (newcontent != "")
                 doAsync {
                     val re =
-                        if (flag) Server.updateComment(item_id, newcontent) else Server.insertComment(item_id, newcontent)
+                            if (flag) Server.updateComment(item_id, newcontent) else Server.insertComment(item_id, newcontent)
                     uiThread {
                         if (re.success == "1")
                             context.toast("评论成功")

@@ -1,8 +1,8 @@
 package io.github.rabenda.neufood.activity
 
 import android.app.Activity
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
@@ -135,7 +135,6 @@ class ShopCarActivity : AppCompatActivity() {
             finish()
         return super.onOptionsItemSelected(item)
     }
-
 
 
 }

@@ -9,24 +9,18 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import io.github.rabenda.neufood.R
 import io.github.rabenda.neufood.adapters.CollectListAdapter
 import io.github.rabenda.neufood.server.Server
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.support.v4.toast
-import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 
-/**
- * A simple [Fragment] subclass.
- *
- */
+
 class FavoriteFragment : Fragment() {
 
     private val share get() = context!!.getSharedPreferences("NeuFood", Activity.MODE_PRIVATE)
-    private val userId get() = share.getString("user_id","")
+    private val userId get() = share.getString("user_id", "")
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -41,7 +35,7 @@ class FavoriteFragment : Fragment() {
         favorite_tabs.addOnTabSelectedListener(tabSelectedListener)
     }
 
-    var tabSelectedListener =  object : TabLayout.OnTabSelectedListener{
+    var tabSelectedListener = object : TabLayout.OnTabSelectedListener {
         override fun onTabReselected(p0: TabLayout.Tab?) {
 
         }
@@ -51,7 +45,7 @@ class FavoriteFragment : Fragment() {
         }
 
         override fun onTabSelected(tab: TabLayout.Tab?) {
-            when (tab?.text){
+            when (tab?.text) {
                 "店铺" -> getCollectList("0")
                 else -> getCollectList("1")
             }

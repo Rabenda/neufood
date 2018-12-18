@@ -12,7 +12,7 @@ class SearchAdapter(val search: SearchFragment, val history: List<String>) : Rec
 
     override fun getItemCount(): Int = history.size
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): Holder =
-            Holder(View.inflate(p0.context, R.layout.search_item,null))
+            Holder(View.inflate(p0.context, R.layout.search_item, null))
 
     override fun onBindViewHolder(p0: Holder, p1: Int) {
         with(p0.itemView) {
@@ -28,5 +28,6 @@ class SearchAdapter(val search: SearchFragment, val history: List<String>) : Rec
             }
         }
     }
-    inner class Holder(view : View) : RecyclerView.ViewHolder(view)
+
+    inner class Holder(view: View) : RecyclerView.ViewHolder(view)
 }

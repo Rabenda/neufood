@@ -13,7 +13,7 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class CommentListAdaper(val usr_id: String, var comments: List<CommentBean>, val flag: Int = 0) :
-    RecyclerView.Adapter<CommentListAdaper.ViewHolder>() {
+        RecyclerView.Adapter<CommentListAdaper.ViewHolder>() {
 
     init {
         when (flag) {
@@ -24,7 +24,7 @@ class CommentListAdaper(val usr_id: String, var comments: List<CommentBean>, val
 
     override fun getItemCount(): Int = comments.size
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder =
-        ViewHolder(View.inflate(p0.context, R.layout.comment_item, null))
+            ViewHolder(View.inflate(p0.context, R.layout.comment_item, null))
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val comment = comments[p1]

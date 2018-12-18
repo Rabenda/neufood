@@ -1,4 +1,4 @@
-package com.prime.dnuifood.Fragments
+package io.github.rabenda.neufood.alerts
 
 import android.content.Context
 import android.support.v7.app.AlertDialog

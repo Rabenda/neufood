@@ -1,16 +1,16 @@
 package io.github.rabenda.neufood.activity
 
 import android.app.Activity
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import com.prime.dnuifood.Fragments.AddCartAlert
-import com.prime.dnuifood.Fragments.InsertOrderAlert
 import com.squareup.picasso.Picasso
 import io.github.rabenda.neufood.R
 import io.github.rabenda.neufood.adapters.CommentListAdaper
+import io.github.rabenda.neufood.alerts.AddCartAlert
+import io.github.rabenda.neufood.alerts.InsertOrderAlert
 import io.github.rabenda.neufood.bean.FoodBean
 import io.github.rabenda.neufood.server.Server
 import kotlinx.android.synthetic.main.activity_food.*
@@ -35,7 +35,7 @@ class FoodActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         rb_insertorder.setOnClickListener { InsertOrderAlert(this, food, userId).create().show() }
-        rb_addcart.setOnClickListener { AddCartAlert(this,userId,foodId).create().show() }
+        rb_addcart.setOnClickListener { AddCartAlert(this, userId, foodId).create().show() }
         fabt_shopcar.setOnClickListener { startActivity<ShopCarActivity>() }
     }
 

@@ -9,8 +9,8 @@ import com.beardedhen.androidbootstrap.TypefaceProvider
 import io.github.rabenda.neufood.R
 import io.github.rabenda.neufood.bean.LoginBean
 import io.github.rabenda.neufood.listener.TListener
+import io.github.rabenda.neufood.model.LoginModel
 import kotlinx.android.synthetic.main.activity_login.*
-import io.github.rabenda.neufood.model.*
 import org.jetbrains.anko.toast
 
 /**
@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else -> {
                     toast("登录成功")
-                    getSharedPreferences("NeuFood",Activity.MODE_PRIVATE).edit().putString("user_id", t.userid).commit()
+                    getSharedPreferences("NeuFood", Activity.MODE_PRIVATE).edit().putString("user_id", t.userid).commit()
                     startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                     finish()
                 }
@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
             loginModel.getLoginResult(login_username.text.toString(),
                     login_password.text.toString(),
                     loginListener
-                    )
+            )
 
         }
 

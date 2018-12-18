@@ -1,4 +1,4 @@
-package com.prime.dnuifood.Fragments
+package io.github.rabenda.neufood.alerts
 
 import android.content.Context
 import android.support.v7.app.AlertDialog
@@ -11,6 +11,7 @@ import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 
 class AddCartAlert(context: Context, usr_id: String, food_id: String) : AlertDialog.Builder(context) {
+
     init {
         setTitle("加入购物车")
         val view = View.inflate(context, R.layout.addcart_alert, null)

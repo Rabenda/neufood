@@ -1,6 +1,7 @@
 package io.github.rabenda.neufood.model
 
 import io.github.rabenda.neufood.listener.ListListener
+import io.github.rabenda.neufood.listener.TListener
 import io.github.rabenda.neufood.server.Server
 import io.github.rabenda.neufood.service.Service
 import retrofit2.Call
@@ -8,7 +9,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import io.github.rabenda.neufood.listener.TListener
 
 
 object retrofitModel {

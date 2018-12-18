@@ -126,6 +126,6 @@ object Server {
                     object : TypeToken<List<CarListBean>>() {}.type
             )
 
-    fun insertOrderByCart(usr_id: String, addr: String,sum: Double,items: String) =
+    fun insertOrderByCart(usr_id: String, addr: String, sum: Double, items: String) =
             Gson().fromJson(URL(BaseUrl + "insertOrder2.do?user_id=$usr_id&address=$addr&sum=$sum&suggesttime=now&items=$items").readText(), RegisterBean::class.java)
 }

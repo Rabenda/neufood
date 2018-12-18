@@ -10,7 +10,7 @@ import io.github.rabenda.neufood.model.RegisterModel
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.toast
 
-class RegisterActivity: AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     val TAG = "RegisterActivity"
 

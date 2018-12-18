@@ -1,10 +1,8 @@
 package io.github.rabenda.neufood.adapters
 
-import android.preference.CheckBoxPreference
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import com.squareup.picasso.Picasso
 import io.github.rabenda.neufood.R
 import io.github.rabenda.neufood.activity.ShopCarActivity
@@ -17,10 +15,10 @@ import org.jetbrains.anko.cancelButton
 import org.jetbrains.anko.okButton
 
 class CarListAdapter(var carts: MutableList<CarListBean>, val usr_id: String, val activity: ShopCarActivity) :
-    RecyclerView.Adapter<CarListAdapter.ViewHolder>() {
+        RecyclerView.Adapter<CarListAdapter.ViewHolder>() {
     override fun getItemCount(): Int = carts.size
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder =
-        ViewHolder(View.inflate(p0.context, R.layout.cart_item, null))
+            ViewHolder(View.inflate(p0.context, R.layout.cart_item, null))
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val onecar = carts[p1]
