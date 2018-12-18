@@ -16,7 +16,7 @@
     <string name="neufood_favorite">收藏</string>
     <string name="neufood_mine">我的</string>
     <string name="neufood">东软美食APP</string>
-
+    <string name="neufood_food">食品</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -12,6 +12,7 @@ import io.github.rabenda.neufood.fragment.MineFragment
 import io.github.rabenda.neufood.fragment.SearchFragment
 import io.github.rabenda.neufood.fragment.StoreFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         main_view_pager.adapter = viewPagerAdapter
         main_view_pager.addOnPageChangeListener(viewPagerListener)
+        fabt_shopcar.setOnClickListener { startActivity<ShopCarActivity>() }
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->

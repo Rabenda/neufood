@@ -26,10 +26,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/neufood" />
-        <activity android:name=".activity.StoreActivity"></activity>
+            android:name=".activity.StoreActivity"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.FoodActivity" />
+        <activity android:name=".activity.ShopCarActivity"></activity>
     </application>
 
 </manifest>

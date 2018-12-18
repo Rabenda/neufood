@@ -1,14 +1,16 @@
 package io.github.rabenda.neufood.activity
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import io.github.rabenda.neufood.R
 import io.github.rabenda.neufood.bean.RegisterBean
 import io.github.rabenda.neufood.listener.TListener
 import io.github.rabenda.neufood.model.RegisterModel
 import kotlinx.android.synthetic.main.activity_register.*
+import org.jetbrains.anko.toast
 
-class RegisterActivity: BaseActivity() {
+class RegisterActivity: AppCompatActivity() {
 
     val TAG = "RegisterActivity"
 
@@ -19,18 +21,18 @@ class RegisterActivity: BaseActivity() {
             Log.d(TAG, "onResponse")
             when (t.success) {
                 "1" -> {
-                    showToast("注册成功")
+                    toast("注册成功")
                     finish()
                 }
                 else -> {
-                    showToast("注册失败")
+                    toast("注册失败")
                 }
             }
         }
 
         override fun onFail(msg: String) {
             Log.d(TAG, "onFailed")
-            showToast("注册失败")
+            toast("注册失败")
         }
     }
 

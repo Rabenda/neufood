@@ -12,7 +12,7 @@ import io.github.rabenda.neufood.listener.TListener
 
 
 object retrofitModel {
-    val retrofit = Retrofit.Builder().baseUrl(Server.SERVER_URL).addConverterFactory(GsonConverterFactory.create()).build()
+    val retrofit = Retrofit.Builder().baseUrl(Server.BaseUrl).addConverterFactory(GsonConverterFactory.create()).build()
     var service = retrofit.create(Service::class.java)
 
     fun <T> callEnqueue(call: Call<T>, tListener: TListener<T>) {

@@ -17,7 +17,7 @@ class StoreAdapter(val storeList: List<StoreBean>): RecyclerView.Adapter<StoreAd
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val shop = storeList[p1]
         with(p0.itemView) {
-            Picasso.get().load(Server.SERVER_URL + shop.pic).into(iv_shopimage)
+            Picasso.get().load(Server.BaseUrl + shop.pic).into(iv_shopimage)
             tv_shopname.setText(shop.shopname)
             tv_shopaddr.setText(shop.address)
             tv_shopcomment.setText(shop.comment)

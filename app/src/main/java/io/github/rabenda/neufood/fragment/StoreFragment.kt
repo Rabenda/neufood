@@ -35,7 +35,7 @@ class StoreFragment : Fragment() {
     }
 
     fun showAllShops() = doAsync {
-        val storeList = Server.getStoreList()
+        val storeList = Server.getAllShops()
         uiThread {
             storeRecyclerView.adapter = StoreAdapter(storeList)
         }
