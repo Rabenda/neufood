@@ -8,8 +8,7 @@ import android.util.Log
 import com.beardedhen.androidbootstrap.TypefaceProvider
 import io.github.rabenda.neufood.R
 import io.github.rabenda.neufood.bean.LoginBean
-import io.github.rabenda.neufood.listener.TListener
-import io.github.rabenda.neufood.model.LoginModel
+import io.github.rabenda.neufood.server.Server
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.toast
 
@@ -20,30 +19,6 @@ class LoginActivity : AppCompatActivity() {
 
     val TAG = "LoginActivity"
 
-    val loginModel = LoginModel()
-
-    val loginListener = object : TListener<LoginBean> {
-        override fun onResponse(t: LoginBean) {
-            Log.d(TAG, "onResponse")
-            when (t.userid) {
-                "0" -> {
-                    toast("登录失败")
-                }
-                else -> {
-                    toast("登录成功")
-                    getSharedPreferences("NeuFood", Activity.MODE_PRIVATE).edit().putString("user_id", t.userid).commit()
-                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                    finish()
-                }
-            }
-        }
-
-        override fun onFail(msg: String) {
-            Log.d(TAG, "onFailed")
-            toast("登录失败")
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         TypefaceProvider.registerDefaultIconSets()
@@ -52,10 +27,19 @@ class LoginActivity : AppCompatActivity() {
         login_button.setOnClickListener {
             Log.i(TAG, login_username.text.toString())
             Log.i(TAG, login_password.text.toString())
-            loginModel.getLoginResult(login_username.text.toString(),
-                    login_password.text.toString(),
-                    loginListener
-            )
+            val loginResult = Server.login(login_username.text.toString(),
+                    login_password.text.toString())
+            when (loginResult.userid) {
+                "0" -> {
+                    toast("登录失败")
+                }
+                else -> {
+                    toast("登录成功")
+                    getSharedPreferences("NeuFood", Activity.MODE_PRIVATE).edit().putString("user_id", loginResult.userid).commit()
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    finish()
+                }
+            }
 
         }
 
