@@ -1,3 +1,3 @@
 package io.github.rabenda.neufood.bean
 
-data class RegisterBean(val success: String)
+data class RegisterBean(var success: String)

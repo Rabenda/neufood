@@ -15,7 +15,7 @@ object Server {
 
     fun register(username: String, userpass: String, mobilenum: String, addrmess: String, comment: String) =
             Gson().fromJson(
-                    URL("userRegister.do?username=${username}&userpass=${userpass}&mobilenum=${mobilenum}&addrmess=${addrmess}&comment=${comment}").readText(),
+                    URL(BaseUrl + "userRegister.do?username=${username}&userpass=${userpass}&mobilenum=${mobilenum}&addrmess=${addrmess}&comment=${comment}").readText(),
                     RegisterBean::class.java
             )
 
